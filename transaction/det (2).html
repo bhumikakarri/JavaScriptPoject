@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+    <title>Document</title>
+</head>
+<style>
+    h1{
+        text-transform: uppercase;
+        text-align: center;
+          height: 70px;
+          padding-top: 30px;
+          font-weight: 800;
+          font-size: 50px;
+         
+          color: rgb(182, 126, 15);
+    }
+
+    p{
+        text-align: center;
+        padding-top: 30px;
+        margin-top: 30px;
+        color: rgb(182, 126, 15);
+    }
+    h3{
+        text-transform: uppercase;
+        text-decoration: underline;
+        color: rgb(182, 126, 15);
+    }
+    input{
+        text-align: center;
+        justify-content: center;
+        border:3px solid;
+        border-radius: 30px;
+        width: 170px;
+        height: 40px;
+        margin-top: 20px;
+        color: black;
+        background-color: rgb(182, 126, 15);
+    }
+    button{
+        text-align: center;
+        border:2px solid;
+        margin-top: 20px;
+        width: 100px;
+        height: 30px;
+        background-color: rgb(182, 126, 15);
+    
+    }
+       
+    .card{
+        border: 3px solid;
+        border-color: rgb(182, 126, 15);
+        height: 450PX;
+        width: 500px;
+        text-align: center;
+        margin-left: 390px;
+        margin-top: 200px;
+        
+    }h4{
+        border: 2px solid;
+        text-decoration: none;
+    } 
+    .block{
+        background-image:url("https://img.freepik.com/free-vector/sparkles-bokeh-background-with-text-space_1017-31522.jpg?w=1300&t=st=1723044940~exp=1723045540~hmac=9e0d35c143ccfba7c2c3f62a9064e56985859791baef37a8082da047089b6ef3");
+   height: 900px;
+    }
+    h2{
+        color: rgb(182, 126, 15);
+    }
+    .cd{
+        text-align: center;
+        margin-left: 80px;
+    }.cd button{
+        width: 200px;
+    }
+</style>
+<body>
+
+    <a href="dashboard2.html"> <button><i class="fa-solid fa-house"></i>home    </button></a>
+    <div class="block">
+        <h1>account details</h1>
+        <div class="card">
+            <div class="card-body">
+              
+              <p class="card-text">
+                <h3>account information</h3>
+                <h2>ACCOUNT HOLDER :BHOOMIKA KARRI</h2>
+             <h2>ACCOUNT NUMBER : 28567866</h2>
+             <h2>ACCOUNT TYPE : SAVINGS</h2>
+          <h2>BALANCE:<span id="balance">100000</span></h2>
+          <input type = "number" id="amount" placeholder="enteramount"></br>
+          <button id="credit-button">credit money</button>&nbsp;
+          <button id="debit-button">debit money</button>
+
+         
+            
+    </div>
+
+
+       
+        </div>
+        <div class="cd">
+        <a href="credit.html"><button id="credit-button">credit</button></a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+<a href="debit.html"><button id="debit-button">debit</button></a> </p>
+</div>
+    </div>
+
+    <script>
+        const balanceElement = document.getElementById('balance');
+        const amountinput = document.getElementById('amount');
+        const creditButton = document.getElementById('credit-button');
+        const debitButton = document.getElementById('debit-button');
+
+        let balance = 100000;
+         
+        creditButton.addEventListener('click',() =>{
+           const amount = parseInt(amountinput.value);
+            balance += amount ;
+            balanceElement.innerText=balance;
+            amountinput.value = ''
+        })
+
+
+        debitButton.addEventListener('click',() =>{
+           const amount = parseInt(amountinput.value);
+           if(amount > balance) {
+            alet("insufficient balance")
+           }else{
+            balance -= amount;
+              balanceElement.innerText=balance;
+            amountinput.value = ''
+           }
+           
+          
+        })
+    </script>
+</body>
+</html>

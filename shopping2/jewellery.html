@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+#products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 50px;
+}
+#products img{
+            width: 100%;
+          transition: 200ms;
+       }
+       #products:hover img{
+         transform: scale(1.02);
+              } 
+.product{
+    width: 300px;
+    height: 510px;
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid;
+    border-radius: 15px;
+    color:wheat;
+}
+.product img{
+  height: 340px;
+  width:300px;
+}
+h1{
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+    
+}
+
+p{
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+}
+.row{
+    text-align: center;
+    font-size: large;
+}.container{
+    text-align: center;
+}
+</style>
+<body>
+
+<div clss="container">
+    
+    <input type="number" id="min-price" placeholder="minprice">
+    <input type="number" id="max-price" placeholder="maxprice">
+    <button id="apply-filter">applyfilter</button>
+</div>
+<div id="products">
+    <div class="product">
+        <img src="https://assets.ajio.com/medias/sys_master/root/20230502/BcJE/6450ce58d55b7d0c638bdc96/-473Wx593H-466111251-white-MODEL.jpg">
+        <h1>limbo</h1>
+        <p>antiquee jewellery</p>
+        <h2 class="price"> $ 500</h2>
+    </div>
+    <div class="product">
+        <img src="https://assets.ajio.com/medias/sys_master/root/20240510/4yke/663dfcea16fd2c6e6afaa1f7/-473Wx593H-467241706-gold-MODEL.jpg">
+
+        <h1>kalyan</h1>
+        <p>jewelery</p>
+        <h2 class="price"> $ 300</h2>
+    </div>
+    <div class="product">
+        <img src="https://assets.vogue.in/photos/6319cfc8c15f6b943a645313/master/w_1600%2Cc_limit/kisandas%2520day2.png">
+
+        <h1>nyrika</h1>
+        <p>jewelery</p>
+        <h2 class="price"> $ 600</h2>
+    </div>
+    <div class="product">
+        <img src="https://assets.ajio.com/medias/sys_master/root/20240111/nXWG/659fb58074cb305fe011d917/-473Wx593H-466374727-gold-MODEL.jpg">
+        <h1>vishnu</h1>
+        <p>jewelery</p>
+        <h2 class="price"> $ 800</h2>
+    </div>
+    <div class="product">
+        <img src="https://assets.ajio.com/medias/sys_master/root/20240111/fqer/659fb53d54c30e6276a3bc53/-473Wx593H-466374972-silver-MODEL.jpg">
+        <h1>limbo</h1>
+        <p>jewelery</p>
+        <h2 class="price"> $ 900</h2>
+    </div>
+    <div class="product">
+        <img src="https://assets.ajio.com/medias/sys_master/root/20240113/AHRz/65a1ad9a16fd2c6e6aa24cc4/-473Wx593H-466976027-gold-MODEL2.jpg">
+        <h1>zeepkart</h1>
+        <p>jewelery</p>
+        <h2 class="price"> $ 600</h2>
+    </div>
+    <div class="product">
+        <img src="https://assets.ajio.com/medias/sys_master/root/20240113/pkxn/65a1ada78cdf1e0df5b184c6/-473Wx593H-466975948-gold-MODEL3.jpg">
+
+        <h1>nyrika</h1>
+        <p>jewelery</p>
+        <h2 class="price"> $ 300</h2>
+    </div>
+    <div class="product">
+        <img src="https://assets.ajio.com/medias/sys_master/root/20240514/dbrq/6643938d05ac7d77bb5b41b6/-473Wx593H-467332603-gold-MODEL.jpg">
+        <h1>niha</h1>
+        <p>jewelery</p>
+        <h2 class="price"> $ 800</h2>
+    </div>
+    <div class="product">
+        <img src="https://assets.ajio.com/medias/sys_master/root/20231006/Vkb2/651fa930afa4cf41f52d2268/-473Wx593H-466143175-gold-MODEL2.jpg">
+        <h1>limbo</h1>
+        <p>jewellery</p>
+        <h2 class="price"> $ 500</h2>
+    </div>
+   
+    </div>
+
+    <script>
+        const products = document.querySelectorAll('.product');
+        document.getElementById('apply-filter').addEventListener('click',applyFilter);
+
+
+        function applyFilter() {
+        const minPrice = parseInt(document.getElementById('min-price').value);
+        const maxPrice = parseInt(document.getElementById('max-price').value);
+
+        products.forEach((product) =>{
+            const price = parseInt(product.querySelector('.price').textContent.replace('$',''));
+            if (price >= minPrice && price <= maxPrice) {
+                product.style.display = 'block';
+            }else{
+                product.style.display = 'none'
+            }
+        });
+    }
+    </script>    
+
+
+</body>
+</html>

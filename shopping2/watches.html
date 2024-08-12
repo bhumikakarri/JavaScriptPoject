@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     #products{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 50px;
+        }
+        #products img{
+            width: 100%;
+          transition: 200ms;
+       }
+       #products:hover img{
+         transform: scale(1.02);
+              } 
+        .product{
+            width: 300px;
+            height: 510px;
+            margin: 5px;
+            padding: 5px;
+            border: 2px solid;
+            border-radius: 15px;
+            color:wheat;
+        }
+        .product img{
+          height: 340px;
+          width:300px;
+        }
+        h1{
+            text-align: center;
+            color: black;
+            text-transform: uppercase;
+            
+        }
+      
+        p{
+            text-align: center;
+            color: black;
+            text-transform: uppercase;
+        }
+        .row{
+            text-align: center;
+            font-size: large;
+        }
+        h2{
+            text-align: center;
+            color: black;
+        }
+        .container{
+            text-align:center;
+            
+        }
+</style>
+<body>
+<div class="container">
+    <input type="number" id="min-price" placeholder="minprice">
+    <input type="number" id="max-price" placeholder="maxprice">
+    <button id="apply-filter">applyfilter</button>
+</div>
+
+
+
+    <div id="products">
+        <div class="product">
+            <img src="https://m.media-amazon.com/images/I/71QoSMBhfVL._SX679_.jpg">
+            <h1>angules</h1>
+            <p>watches</p>
+            <h2 class="price"> $ 1100</h2>
+        </div>
+        <div class="product">
+            <img src="https://m.media-amazon.com/images/I/61SDFAY5t9L._SX679_.jpg">
+
+            <h1>bianchet</h1>
+            <p>watches</p>
+            <h2 class="price"> $ 500</h2>
+        </div>
+        <div class="product">
+            <img src="https://m.media-amazon.com/images/I/61gGGV2XPyL._SX679_.jpg">
+
+            <h1>fastrack</h1>
+            <p>delma</p>
+            <h2 class="price"> $ 1000</h2>
+        </div>
+        <div class="product">
+            <img src="https://m.media-amazon.com/images/I/71euM6LMwfL._SX569_.jpg">
+            <h1>ebel</h1>
+            <p>watches</p>
+            <h2 class="price"> $ 500</h2>
+        </div>
+        <div class="product">
+            <img src="https://m.media-amazon.com/images/I/51V4cwzsS1L._SX679_.jpg">
+            <h1>fastrack</h1>
+            <p>watches</p>
+            <h2 class="price"> $ 400</h2>
+        </div>
+        <div class="product">
+            <img src="https://m.media-amazon.com/images/I/511gHFVWqpL._SX679_.jpg">
+            <h1>zeepkart</h1>
+            <p>watches</p>
+            <h2 class="price"> $ 900</h2>
+        </div>
+     
+      
+        </div>
+        <script>
+            const products = document.querySelectorAll('.product');
+            document.getElementById('apply-filter').addEventListener('click',applyFilter);
+    
+    
+            function applyFilter() {
+            const minPrice = parseInt(document.getElementById('min-price').value);
+            const maxPrice = parseInt(document.getElementById('max-price').value);
+    
+            products.forEach((product) =>{
+                const price = parseInt(product.querySelector('.price').textContent.replace('$',''));
+                if (price >= minPrice && price <= maxPrice) {
+                    product.style.display = 'block';
+                }else{
+                    product.style.display = 'none'
+                }
+            });
+        }
+        </script>    
+</body>
+</html>

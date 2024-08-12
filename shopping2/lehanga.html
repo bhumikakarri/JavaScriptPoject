@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+         #products{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 50px;
+        }
+        #products img{
+            width: 100%;
+          transition: 200ms;
+       }
+       #products:hover img{
+         transform: scale(1.02);
+              } 
+        .product{
+            width: 300px;
+            height: 510px;
+            margin: 5px;
+            padding: 5px;
+            border: 2px solid;
+            border-radius: 15px;
+            color:wheat;
+        }
+        .product img{
+          height: 340px;
+          width:300px;
+        }
+        h1{
+            text-align: center;
+            color: black;
+            text-transform: uppercase;
+            
+        }
+      
+        p{
+            text-align: center;
+            color: black;
+            text-transform: uppercase;
+        }
+        .row{
+            text-align: center;
+            font-size: large;
+        }
+        h2{
+            text-align: center;
+            color: black;
+        }.container{
+            text-align: center;
+        }
+</style>
+<body>
+
+<div class="container">
+    <input type="number" id="min-price" placeholder="minprice">
+    <input type="number" id="max-price" placeholder="maxprice">
+    <button id="apply-filter">applyfilter</button>
+</div>
+
+
+    <div id="products">
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240403/v8y2/660d4e3016fd2c6e6a9a823f/-473Wx593H-467221782-white-MODEL.jpg">
+            <h1>limbo</h1>
+            <p>women lehanga choli set</p>
+            <h2 class="price"> $ 500</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240328/xS7k/6605704f05ac7d77bbe0e5c4/-473Wx593H-467041652-mustard-MODEL.jpg">
+
+            <h1>ghumar</h1>
+            <p>women lehanga choli set</p>
+            <h2 class="price"> $ 700</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240508/l3tI/663b80da16fd2c6e6af38ea1/-473Wx593H-467315156-white-MODEL.jpg">
+
+            <h1>nyrika</h1>
+            <p>women lehanga choli set</p>
+            <h2 class="price"> $ 900</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240617/bGug/66704da81d763220fac68660/-473Wx593H-700099614-black-MODEL.jpg">
+            <h1>aavasa</h1>
+            <p>women lehanga choli set</p>
+            <h2 class="price"> $ 600</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240127/jWG9/65b405c48cdf1e0df5d253c1/-473Wx593H-467014061-yellow-MODEL.jpg">
+            <h1>limbo</h1>
+            <p>women lehanga choli set</p>
+            <h2 class="price"> $ 500</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20231025/dwVL/653898b2ddf7791519586301/-473Wx593H-466742251-green-MODEL2.jpg">
+            <h1>zeepkart</h1>
+            <p>women lehanga choli set</p>
+            <h2 class="price"> $ 300</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20231229/p4a5/658ec963afa4cf41f5f602c8/-473Wx593H-466929496-white-MODEL.jpg">
+
+            <h1>nyrika</h1>
+            <p>women lehanga choli set</p>
+            <h2 class="price"> $ 200</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240719/txCY/669a3d106f60443f318ec364/-473Wx593H-443017074-peach-MODEL.jpg">
+            <h1>aavasa</h1>
+            <p>women lehanga choli set</p>
+            <h2 class="price"> $ 100</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240507/zPYf/663a03b605ac7d77bb451bf3/-473Wx593H-467308042-green-MODEL.jpg">
+            <h1>limbo</h1>
+            <p>women lehanga choli set</p>
+            <h2 class="price"> $ 600</h2>
+        </div>
+       
+        </div>
+
+
+        
+        <script>
+            const products = document.querySelectorAll('.product');
+            document.getElementById('apply-filter').addEventListener('click',applyFilter);
+    
+    
+            function applyFilter() {
+            const minPrice = parseInt(document.getElementById('min-price').value);
+            const maxPrice = parseInt(document.getElementById('max-price').value);
+    
+            products.forEach((product) =>{
+                const price = parseInt(product.querySelector('.price').textContent.replace('$',''));
+                if (price >= minPrice && price <= maxPrice) {
+                    product.style.display = 'block';
+                }else{
+                    product.style.display = 'none'
+                }
+            });
+        }
+        </script>    
+</body>
+</html>

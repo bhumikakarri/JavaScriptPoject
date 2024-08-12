@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     #products{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 50px;
+        }
+        #products img{
+            width: 100%;
+          transition: 200ms;
+       }
+       #products:hover img{
+         transform: scale(1.02);
+              } 
+        .product{
+            width: 300px;
+            height: 510px;
+            margin: 5px;
+            padding: 5px;
+            border: 2px solid;
+            border-radius: 15px;
+            color:wheat;
+        }
+        .product img{
+          height: 340px;
+          width:300px;
+        }
+        h1{
+            text-align: center;
+            color: black;
+            text-transform: uppercase;
+            
+        }
+      
+        p{
+            text-align: center;
+            color: black;
+            text-transform: uppercase;
+        }
+        .row{
+            text-align: center;
+            font-size: large;
+        }  h2{
+            text-align: center;
+            color: black;
+        }
+        .container{
+            text-align: center;
+        }
+</style>
+<body>
+<div class="container">
+    <input type="number" id="min-price" placeholder="minprice">
+    <input type="number" id="max-price" placeholder="maxprice">
+    <button id="apply-filter">applyfilter</button>
+</div>
+   
+
+
+    <div id="products">
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240314/QSCI/65f30ed305ac7d77bbb5d651/-473Wx593H-442306705-purple-MODEL.jpg">
+            <h1>limbo</h1>
+            <p>men sweats</p>
+            <h2 class="price"> $ 1100</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20230831/055X/64f0b560ddf77915198e23f2/-473Wx593H-443013324-black-MODEL.jpg">
+
+            <h1>zeepkart</h1>
+            <p>men sweats</p>
+            <h2 class="price"> $ 500</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240510/K8LG/663e1caf16fd2c6e6afb0eae/-473Wx593H-442333271-darkgrey-MODEL.jpg">
+
+            <h1>nyrika</h1>
+            <p>men sweats</p>
+            <h2 class="price"> $ 1000</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20230922/vlJC/650db40eddf7791519f559b8/-473Wx593H-469473311-offwhite-MODEL.jpg">
+            <h1>aavasa</h1>
+            <p>men sweats</p>
+            <h2 class="price"> $ 500</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240118/FqLy/65a940d216fd2c6e6ab0d89a/-473Wx593H-410408976-41q-MODEL.jpg">
+            <h1>limbo</h1>
+            <p>men sweats</p>
+            <h2 class="price"> $ 400</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240711/aBFh/668fb1281d763220fa594888/-473Wx593H-464944183-grey-MODEL.jpg">
+            <h1>zeepkart</h1>
+            <p>men sweats</p>
+            <h2 class="price"> $ 900</h2>
+        </div>
+      
+      
+        </div>
+        <script>
+            const products = document.querySelectorAll('.product');
+            document.getElementById('apply-filter').addEventListener('click',applyFilter);
+    
+    
+            function applyFilter() {
+            const minPrice = parseInt(document.getElementById('min-price').value);
+            const maxPrice = parseInt(document.getElementById('max-price').value);
+    
+            products.forEach((product) =>{
+                const price = parseInt(product.querySelector('.price').textContent.replace('$',''));
+                if (price >= minPrice && price <= maxPrice) {
+                    product.style.display = 'block';
+                }else{
+                    product.style.display = 'none'
+                }
+            });
+        }
+        </script>    
+</body>
+</html>

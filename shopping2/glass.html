@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     #products{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 50px;
+        }
+        #products img{
+            width: 100%;
+          transition: 200ms;
+       }
+       #products:hover img{
+         transform: scale(1.02);
+              } 
+        .product{
+            width: 300px;
+            height: 510px;
+            margin: 5px;
+            padding: 5px;
+            border: 2px solid;
+            border-radius: 15px;
+            color:wheat;
+        }
+        .product img{
+          height: 340px;
+          width:300px;
+        }
+        h1{
+            text-align: center;
+            color: black;
+            text-transform: uppercase;
+            
+        }
+      
+        p{
+            text-align: center;
+            color: black;
+            text-transform: uppercase;
+        }
+        .row{
+            text-align: center;
+            font-size: large;
+        }  h2{
+            text-align: center;
+            color: black;
+        }
+        .container{
+            text-align: center;
+        }
+
+</style>
+<body>
+<div class="container">
+    <input type="number" id="min-price" placeholder="minprice">
+    <input type="number" id="max-price" placeholder="maxprice">
+    <button id="apply-filter">applyfilter</button>
+</div>
+
+
+
+    <div id="products">
+        <div class="product">
+            <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRg5SJcVKVdKj4Rd02Q6JAcO4VWdR7hrixKqeguh5NyUD_OpJXgtsB7nS82CxuUcMXUoTSu4-ltzhw3NxmNqIOlmWqULsfNZksFhfV2GZ2WmNvHfcNuu38B&usqp=CAE">
+            <h1>fastrack</h1>
+            <p>sunglassess</p>
+            <h2 class="price"> $ 1100</h2>
+        </div>
+        <div class="product">
+            <img src="https://m.media-amazon.com/images/I/51qC+v0+hUL.SS700.jpg">
+
+            <h1>zeepkart</h1>
+            <p>sunglassess</p>
+            <h2 class="price"> $ 500</h2>
+        </div>
+        <div class="product">
+            <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQUce5Hu3IeOEnQgJeTqr-CsoSuD1qzVaTjJBSq0ivV-itZaRBmV4qFGJNvyRAonGA72MCItndO3MMIUIIbGHOo7n7JVFF8Sn2oI_5umkPRO6dsSYSFIIXZJIg&usqp=CAE">
+
+            <h1>nyrika</h1>
+            <p>sunglassess</p>
+            <h2 class="price"> $ 1000</h2>
+        </div>
+        <div class="product">
+            <img src="   https://idee-eyewear.com/cdn/shop/products/IDS2922C4PSG_3_720x.jpg?v=1677217105">
+            <h1>aavasa</h1>
+            <p>sunglassess</p>
+            <h2 class="price"> $ 500</h2>
+        </div>
+        <div class="product">
+            <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQgTntCNUHFRpL8kr2BR7ZnvIxkJnbOv_EzrsMMBt76-ewS1NvuVEZCcuVzRg1rEnKJEQ3dpoDalLwdjntsLRX_CAbBNINhkHStzZ7H_tW8yU6FRSM9ZyAoLdQ&usqp=CAE">
+            <h1>limbo</h1>
+            <p>sunglassess</p>
+            <h2 class="price"> $ 400</h2>
+        </div>
+        <div class="product">
+            <img src="https://lh3.googleusercontent.com/spp/AMO2MR4IszOhQIIImkuPEINuTt3GmdcELRuESE53RbvaaT9QvOISylzcqrNhG3nm2LmDaFcwFLXZrn5sSobpAvBTrJtbY83oZz7rGMsmB6oF4tx7e2l2sTrHTxdNO835JgLG-CFFQmgY6CbT1ZHNDGsSUdTDNtOItKJkObhXdIlCev1WpgdyiFyk3AqdzBXx_iW1SWUV2istGw=s512-rw-pd-pc0x00ffffff">
+            <h1>zeepkart</h1>
+            <p>sunglassess</p>
+            <h2 class="price"> $ 900</h2>
+        </div>
+     
+      
+        </div>
+        <script>
+            const products = document.querySelectorAll('.product');
+            document.getElementById('apply-filter').addEventListener('click',applyFilter);
+    
+    
+            function applyFilter() {
+            const minPrice = parseInt(document.getElementById('min-price').value);
+            const maxPrice = parseInt(document.getElementById('max-price').value);
+    
+            products.forEach((product) =>{
+                const price = parseInt(product.querySelector('.price').textContent.replace('$',''));
+                if (price >= minPrice && price <= maxPrice) {
+                    product.style.display = 'block';
+                }else{
+                    product.style.display = 'none'
+                }
+            });
+        }
+        </script>    
+</body>
+</html>

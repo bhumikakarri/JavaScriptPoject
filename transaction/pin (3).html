@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+      input{
+    color:black ;
+    border-radius: 300px;
+    border-color:rgb(94, 161, 238) ;
+  }
+  button{
+    border-color:rgb(94, 161, 238) ;
+    
+  }
+#pin-alert{
+    text-align: center;
+    padding-top: 50px;
+}
+</style>
+<body>
+    
+    <div id="pin-alert"  class="alert" >
+        <span class="close">&times;</span>
+        <input type="text"   placeholder="ENTER PIN"  id="pin-input" number="2222" maxlength="4"/>
+        <button id="submit-pin"> <a href="det.html">submit</a></button>
+       </div>
+          <script>
+            let pin = prompt("enter 4 digitn pin:")
+            while(pin!=="2222"){
+            alert("incorrect please try again");
+            pin = prompt("enter your four digit pin");
+            }
+            alert("correct pin success")
+            window.location.href = "account1 (3).html";
+      </script>
+
+</body>
+</html>

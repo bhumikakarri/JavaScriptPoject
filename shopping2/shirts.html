@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     #products{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 50px;
+        }
+        #prodcts img{
+            width: 100%;
+          transition: 200ms;
+       }
+   #products:hover img{
+         transform: scale(1.02);
+              } 
+        .product{
+            width: 300px;
+            height: 510px;
+            margin: 5px;
+            padding: 5px;
+            border: 2px solid;
+            border-radius: 15px;
+            color:wheat;
+        }
+        .product img{
+          height: 340px;
+          width:300px;
+        }
+        h1{
+            text-align: center;
+            color: black;
+            text-transform: uppercase;
+            
+        }
+      
+        p{
+            text-align: center;
+            color: black;
+            text-transform: uppercase;
+        }
+        .row{
+            text-align: center;
+            font-size: large;
+        }
+        h2{
+            text-align: center;
+            color: black;
+        }
+        .container{
+            text-align: center;
+        }
+</style>
+<body>
+    <div class="container">
+    <input type="number" id="min-price" placeholder="minprice">
+    <input type="number" id="max-price" placeholder="maxprice">
+    <button id="apply-filter">applyfilter</button>
+</div>
+
+
+
+
+    <div id="products">
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240527/KULM/66539fd016fd2c6e6a280c95/-473Wx593H-700014865-grey-MODEL.jpg">
+            <h1>limbo</h1>
+            <p>Regular  fit shirt for men</p>
+            <h2 class="price">$ 1100</h2>
+        </div>
+
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240621/0MeE/66759e026f60443f3170b478/-473Wx593H-469635031-blue-MODEL.jpg">
+
+            <h1>zeepkart</h1>
+            <p>Regular  fit shirt for men</p>
+            <h2 class="price">$ 500</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240724/gLDA/66a103236f60443f31a562cb/vastrado_white_men_striped_slim_fit_shirt_with_patch_pocket.jpg">
+
+            <h1>nyrika</h1>
+            <p>Regular  fit shirt for men</p>
+            <h2 class="price">$ 600</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240717/hKmD/6696cfb31d763220fac97f1a/campus_sutra_blue_checked_shirt_with_patch_pocket.jpg">
+            <h1>aavasa</h1>
+            <p>Regular  fit shirt for men</p>
+            <h2 class="price">$ 600</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20230621/tQsK/64928a82d55b7d0c639079b8/the_bear_house_grey_men_checked_slim_fit_shirt.jpg">
+            <h1>limbo</h1>
+            <p>Regular  fit shirt for men</p>
+            <h2 class="price">$ 400</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240215/Xsjl/65cd136516fd2c6e6af9cbc8/-473Wx593H-467076219-greymelange-MODEL.jpg">
+            <h1>zeepkart</h1>
+            <p>Regular  fit shirt for men</p>
+            <h2 class="price">$ 300</h2>
+        </div>
+        </div>
+        <script>
+            const products = document.querySelectorAll('.product');
+            document.getElementById('apply-filter').addEventListener('click',applyFilter);
+    
+    
+            function applyFilter() {
+            const minPrice = parseInt(document.getElementById('min-price').value);
+            const maxPrice = parseInt(document.getElementById('max-price').value);
+    
+            products.forEach((product) =>{
+                const price = parseInt(product.querySelector('.price').textContent.replace('$',''));
+                if (price >= minPrice && price <= maxPrice) {
+                    product.style.display = 'block';
+                }else{
+                    product.style.display = 'none'
+                }
+            });
+        }
+        </script>    
+
+</body>
+</html>

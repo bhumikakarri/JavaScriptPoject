@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>   
+<head>
+    <title>Application Programming interface</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  </head>
+  <style>
+
+    .main{
+        display: flex;
+        flex-wrap:wrap;
+        text-align:center;
+        
+        
+
+    }
+    .card{
+        border: 2px solid;
+        padding: 5px;
+        margin : 30px;
+        
+    }
+     img{
+        height: 300px;
+     }
+
+     img:hover{
+        transform: scale(0.9);
+        transition: 2s;
+      }.card1{
+        width:90px;
+      }.fa-solid{
+        margin-left: 20px;
+        
+      }
+     
+  </style>
+<body>
+    
+ <a href="../index.html"><i class="fa-solid fa-arrow-left fa-xl"></i></a>
+
+    <div class="main">
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card1">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+      
+
+
+    </div>
+
+
+
+
+<script>
+    let cards = document.querySelectorAll(".card");
+    async function getdata(){
+        let responce = await fetch("https://dummyjson.com/products")
+        let data =await responce.json();
+        console.log(data.products );
+
+       
+        cards.forEach((element,i)=>{
+            element.getElementsByTagName("img")[0].src=data.products[i].images[0];
+            element.getElementsByTagName("p")[0].innerHTML=data.products[i].price;
+            element.getElementsByTagName("span")[0].innerHTML=data.products[i].brand;
+            
+        })
+    }
+      getdata();
+      
+</script>
+</body>    
+</html>
+

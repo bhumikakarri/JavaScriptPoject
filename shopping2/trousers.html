@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     #products{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 50px;
+        }
+        #products img{
+            width: 100%;
+          transition: 200ms;
+       }
+   #products:hover img{
+         transform: scale(1.02);
+              } 
+        .product{
+            width: 300px;
+            height: 510px;
+            margin: 5px;
+            padding: 5px;
+            border: 2px solid;
+            border-radius: 15px;
+            color:wheat;
+        }
+        .product img{
+          height: 340px;
+          width:300px;
+        }
+        h1{
+            text-align: center;
+            color: black;
+            text-transform: uppercase;
+            
+        }
+      
+        p{
+            text-align: center;
+            color: black;
+            text-transform: uppercase;
+        }
+        .row{
+            text-align: center;
+            font-size: large;
+        }
+        h2{
+            text-align: center;
+            color: black;
+        }.container{
+            text-align: center;
+        }
+            
+        
+</style>
+<body>
+
+<div clas="container">
+    <input type="number" id="min-price" placeholder="minprice">
+    <input type="number" id="max-price" placeholder="maxprice">
+    <button id="apply-filter">applyfilter</button>
+ 
+</div>
+
+
+    <div id="products">
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20220311/6ZYP/622a5d4cf997dd03e20c9e12/-473Wx593H-469082940-grey-MODEL.jpg">
+            <h1>limbo</h1>
+            <p>men trousers and tracks</p>
+            <h2 class="price"> $ 700</h2>
+        </div>
+
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240213/kUyn/65cb9a4116fd2c6e6af52cc6/-473Wx593H-467069481-blue-MODEL.jpg">
+
+            <h1>zeepkart</h1>
+            <p>men trousers and tracks</p>
+            <h2 class="price"> $ 300</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240520/BjKf/664afd8416fd2c6e6a11bcaf/-473Wx593H-443048478-grey-MODEL.jpg">
+
+            <h1>nyrika</h1>
+            <p>men trousers and tracks</p>
+            <h2 class="price"> $ 500</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240613/oToA/666cf2041d763220fab946f8/-473Wx593H-443049564-charcoal-MODEL.jpg">
+            <h1>aavasa</h1>
+            <p>mewn trousers and tracks</p>
+            <h2 class="price"> $ 400</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240629/FJaF/667f0f4e1d763220fa6fb3d3/-473Wx593H-700140337-black-MODEL.jpg">
+            <h1>limbo</h1>
+            <p>mewn trousers and tracks</p>
+            <h2 class="price"> $ 200</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240215/Xsjl/65cd136516fd2c6e6af9cbc8/-473Wx593H-467076219-greymelange-MODEL.jpg">
+            <h1>zeepkart</h1>
+            <p>mewn trousers and tracks</p>
+            <h2 class="price"> $ 900</h2>
+        </div>
+      
+      
+        </div>
+
+        <script>
+            const products = document.querySelectorAll('.product');
+            document.getElementById('apply-filter').addEventListener('click',applyFilter);
+    
+    
+            function applyFilter() {
+            const minPrice = parseInt(document.getElementById('min-price').value);
+            const maxPrice = parseInt(document.getElementById('max-price').value);
+    
+            products.forEach((product) =>{
+                const price = parseInt(product.querySelector('.price').textContent.replace('$',''));
+                if (price >= minPrice && price <= maxPrice) {
+                    product.style.display = 'block';
+                }else{
+                    product.style.display = 'none'
+                }
+            });
+        }
+        </script>    
+</body>
+</html>

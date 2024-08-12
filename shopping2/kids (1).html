@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     #products{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 50px;
+        }
+        #products img{
+            width: 100%;
+          transition: 200ms;
+       }
+       #products:hover img{
+         transform: scale(1.02);
+              } 
+        .product{
+            width: 300px;
+            height: 510px;
+            margin: 5px;
+            padding: 5px;
+            border: 2px solid;
+            border-radius: 15px;
+            color:wheat;
+        }
+        .product img{
+          height: 340px;
+          width:300px;
+        }
+        h1{
+            text-align: center;
+            color: black;
+            text-transform: uppercase;
+            
+        }
+      
+        p{
+            text-align: center;
+            color: black;
+            text-transform: uppercase;
+        }
+        .row{
+            text-align: center;
+            font-size: large;
+        }h2{
+            text-align: center;
+            color: black;
+        }.container{
+            text-align: center;
+        }
+</style>
+<body>
+
+<div class="container">
+
+    <input type="number" id="min-price" placeholder="minprice">
+    <input type="number" id="max-price" placeholder="maxprice">
+    <button id="apply-filter">applyfilter</button>
+</div>
+
+    <div id="products">
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240727/1J2l/66a4301e6f60443f31c72cfc/-473Wx593H-700232705-black-MODEL.jpg">
+            <h1>limbo</h1>
+            <p>kids embroidary gowns</p>
+            <h2 class="price"> $ 1100</h2>
+        </div>
+
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240729/ZNrd/66a719da6f60443f31d45c2a/-473Wx593H-700232705-purple-MODEL.jpg">
+
+            <h1>zeepkart</h1>
+            <p>kids embroidary gowns</p>
+            <h2 class="price"> $ 1100</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240724/Z0fO/66a058261d763220fa13634d/-473Wx593H-700223209-black-MODEL.jpg">
+
+            <h1>nyrika</h1>
+            <p>kids embroidary gowns</p>
+            <h2 class="price"> $ 1100</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20221129/bK0g/6385c951aeb269659cbbf8e0/ps_kids_by_payal_singhal_multicolour_african_print_silkmul_kurta_%26_churidar_with_dupion_silk_bandi.jpg">
+            <h1>aavasa</h1>
+            <p>kids embroidary gowns</p>
+            <h2 class="price"> $ 1100</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240419/Mf9h/6621f19c05ac7d77bb183b87/-473Wx593H-467261215-cream-MODEL.jpg">
+            <h1>limbo</h1>
+            <p>kids embroidary gowns</p>
+            <h2 class="price"> $ 1100</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240628/JuvA/667e6e871d763220fa60c2bd/-473Wx593H-466546762-pink-MODEL.jpg">
+            <h1>zeepkart</h1>
+            <p>kids embroidary gowns</p>
+            <h2 class="price"> $ 1100</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240728/nlc3/66a5ab1f6f60443f31ce399f/-473Wx593H-463873437-multi-MODEL2.jpg">
+            <h1>zeepkart</h1>
+            <p>kids embroidary gowns</p>
+            <h2 class="price"> $ 1100</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20230801/o4Uq/64c8f348eebac147fc9a6ba7/-473Wx593H-466382412-multi-MODEL.jpg">
+            <h1>zeepkart</h1>
+            <p>kids embroidary gowns</p>
+            <h2 class="price"> $ 1100</h2>
+        </div>
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240620/a3hC/66744b981d763220fadf2f51/-473Wx593H-443046907-lightyellow-MODEL.jpg">
+            <h1>zeepkart</h1>
+            <p>kids embroidary gowns</p>
+            <h2 class="price"> $ 1100</h2>
+        </div>
+        </div>
+
+        <script>
+            const products = document.querySelectorAll('.product');
+            document.getElementById('apply-filter').addEventListener('click',applyFilter);
+    
+    
+            function applyFilter() {
+            const minPrice = parseInt(document.getElementById('min-price').value);
+            const maxPrice = parseInt(document.getElementById('max-price').value);
+    
+            products.forEach((product) =>{
+                const price = parseInt(product.querySelector('.price').textContent.replace('$',''));
+                if (price >= minPrice && price <= maxPrice) {
+                    product.style.display = 'block';
+                }else{
+                    product.style.display = 'none'
+                }
+            });
+        }
+        </script>    
+
+
+
+
+</body>
+</html>
