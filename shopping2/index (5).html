@@ -33,13 +33,13 @@
             height: 500px;
             margin: 20px;
             padding: 5px;
-            border: 1px solid;
+            border: 3px solid rgb(254, 203, 136);
             border-radius: 10px;
         }
         .block img{
           height: 400px;
           width:350px;
-        }h1{
+        }h2{
           text-align: center;
         }
         .fa-solid{
@@ -70,7 +70,51 @@
         font-weight: 800;
         font-style: italic;
       }
-
+      .continer-fluid{
+  animation-name: ani3;
+  animation-duration: 4s;
+ animation-timeline: view();
+ width: 100%;
+  
+  
+}
+@keyframes ani3
+ {
+  from{
+    scale:0;
+  }
+  to{
+    scale:1;
+  }
+}
+.image1 {
+    position: absolute;
+    padding: 20px;
+    top: 25%;
+    animation-name: hello;  
+         animation-duration: 5s; 
+         animation-iteration-count: 1;
+      
+         animation-range: entry 0% cover 80%;
+  }
+  @keyframes hello{
+  from{transform: scale(0); }
+to{transform: scale(1);}
+}
+.image1 h1{
+  color:  rgb(125, 25, 42);
+  font-style: italic;
+  font-weight: 800;
+}
+.image1 h3{
+  color:rgb(217, 131, 19);
+  font-weight: 1000;
+}
+h2{
+  color: rgb(125, 25, 42);
+  font-style: italic;
+  font-weight: 600;
+}
 
 </style>
 <body>
@@ -94,7 +138,7 @@
       </div>
         </div>
   </div>
-  
+  <div class="container-fluid">
     <div id="carouselExampleIndicators" class="carousel slide">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -105,6 +149,10 @@
           <div class="carousel-item active">
            
            <img src="https://cdn.pixabay.com/photo/2017/08/06/17/58/people-2594683_1280.jpg" height="500px" class="d-block w-100" alt="...">
+           <div class="image1">
+            <h1>The AjiO Big Bold Sale Is Live</h1>
+            <h3>Upto 70% off</h3>
+            </div> 
         
         
         
@@ -126,19 +174,20 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+    </div>
      
        <div class="dashboard">
         <div class="block men">
           <a href="menswear.html"> <img src="https://i.pinimg.com/474x/fa/2f/29/fa2f29fc3ea5650bcd95f7cc02e059cf.jpg" ></a>
-        <h1>MEN WEAR</h1>
+        <h2>MEN WEAR</h2>
          </div>
           <div class="block kids">
             <a href="kids (1).html"> <img src="https://assets.ajio.com/medias/sys_master/root/20240728/nlc3/66a5ab1f6f60443f31ce399f/-473Wx593H-463873437-multi-MODEL2.jpg" ></a>
-          <h1>KIDS WEAR</h1>
+          <h2>KIDS WEAR</h2>
            </div>
             <div class="block women">
               <a href="womenswear.html"> <img src="https://me99.in/wp-content/uploads/2023/05/White-Cotton-Anarkali-Gown-2.jpg" ></a>
-            <h1>WOMEN WEAR</h1>
+            <h2>WOMEN WEAR</h2>
              </div>
        </div>
 
