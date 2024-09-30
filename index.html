@@ -25,13 +25,14 @@
      height: 800px;
    }
     .head1{
-        background: linear-gradient(45deg, #115876, #0e6380);
+        background: linear-gradient(45deg, #4391b3, #4594ae);
         text-align: center;
         height: 70px;
     }h1{
         text-align: center;
-        font-weight: 600;
+        font-weight: 1000;
         color: white;
+     
     }
 
     .box {
@@ -102,6 +103,15 @@
         text-decoration: none;
        
     }
+    
+    .box1:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .box2:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
 
     .btn-container {
         position: absolute;
@@ -114,18 +124,22 @@
 
     .btn {
         padding: 10px 20px;
-        margin: 5px;
+        margin: 10px;
         border: none;
         border-radius: 5px;
-        background-color: rgb(77, 183, 77);
-        color: white;
+        background-color:#ececed;
+        color: black;
         font-size: 16px;
         cursor: pointer;
         transition: 0.3s;
+        margin-top: 100px;
+        box-shadow: #ececed wheat;
+        font-weight: 800;
     }
 
     .btn:hover {
-        background-color: #45a049;
+        background-color: #255d96;
+        color: white;
     }
     .container a{
         text-decoration: none;
@@ -145,7 +159,7 @@
             <div class="col-sm-4">
    <a href="./transaction/in.html"> 
     <div class="box" id="loginBox">
-        Transaction
+        
         <div class="btn-container">
             <button class="btn" >Transaction</button>
         </div>
@@ -158,7 +172,7 @@
     <div class="col-sm-4">
    <a href="./shopping2/index (5).html"> 
     <div class="box1" id="shoppingBox">
-        Shopping
+        
         <div class="btn-container">
             <button class="btn" >Start Shopping</button>
         </div>
@@ -168,10 +182,9 @@
 <div class="col-sm-4">
      <a href="./api calling/index.html">
     <div class="box2" id="apiBox">
-        API Calling
-        <d
-        iv class="btn-container">
-            <button class="btn" >Call API</button>
+        
+        <div class="btn-container">
+            <button class="btn" >Api calling</button>
         </div>
         </div>
 </a>
